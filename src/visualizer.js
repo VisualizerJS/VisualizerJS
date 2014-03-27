@@ -1,6 +1,6 @@
 function Visualizer(){
   var timer = null;
-  var draw = [drawPeaks];
+  var draw = [];
   var visualizer = {};
   visualizer.container = null;
   visualizer.audioSource = null;
@@ -15,6 +15,7 @@ function Visualizer(){
     visualizer.container.appendChild(visualizer.fgCanvas);
     visualizer.fgCanvas.width = visualizer.audioSource.streamData.length*2;
     visualizer.fgCanvas.height = '128';
+    draw.push(drawPeaks);
   };
   visualizer.start = function(){
     visualizer.fgCanvas.addEventListener('click', function(){
