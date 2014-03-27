@@ -47,7 +47,7 @@ function Visualizer(){
       canvas.height = opts.height||'128';
       visualizer.addEffect(drawPeaks);
     }else{
-      console.log('Visualizer.init: missing options, audiotSource and container are required');
+      console.log('Visualizer.init: missing options, audioSource and container are required');
     }
   };
   visualizer.start = function(){
