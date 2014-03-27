@@ -1,4 +1,6 @@
 function Visualizer(){
+  var timer = null;
+  var draw = [drawPeaks];
   var visualizer = {};
   visualizer.container = null;
   visualizer.audioSource = null;
@@ -13,11 +15,17 @@ function Visualizer(){
     visualizer.container.appendChild(visualizer.fgCanvas);
     visualizer.fgCanvas.width = visualizer.audioSource.streamData.length*2;
     visualizer.fgCanvas.height = '128';
-  }
+  };
   visualizer.start = function(){
-    draw(); 
-  }
-  var draw = function(){
+    visualizer.fgCanvas.addEventListener('click', function(){
+      visualizer.step += 1;
+      if(visualizer.step > 8){
+        visualizer.step = 3;
+      }
+    });
+    draw[0](); 
+  };
+  var drawPeaks = function(){
     visualizer.fgCtx.fillStyle = '#FFFFFF';
     visualizer.fgCtx.fillRect(0,0,256,256);
     visualizer.fgCtx.fillStyle = '#000000';
@@ -25,7 +33,7 @@ function Visualizer(){
     for(var i = 0;i<visualizer.audioSource.streamData.length;i++){
       visualizer.fgCtx.fillRect(i*step,Math.floor(62 - 62*(visualizer.audioSource.streamData[i]/256)),step,2);
     }
-    requestAnimationFrame(draw);
+    timer = requestAnimationFrame(drawPeaks);
   };
   return visualizer;
 }
