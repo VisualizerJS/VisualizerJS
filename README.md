@@ -3,11 +3,18 @@ VisualizerJS
 
 Canvas visualization library, was originally part of my [Soundcloud radio](http://zxc.fi/) but decided to roll it out as a separate library.
 
-Download the ```visualizer.js``` and add it to your page.
+###Requirements
+1. Node 0.10.18
 
+###Installing
+
+Clone this repo and install the dependencies. Then build with Browserify 
 ```
-<script src="visualizer.js"></script>
+npm install
+node node_modules/.bin/browserify src/main.js > visualizer.js
 ```
+
+
 
 Usage:
 ```
