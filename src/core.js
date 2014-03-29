@@ -2,19 +2,14 @@
   var utils = require('./utils');
   var visuals = require('./visuals');
   var start = module.exports.start = function(){
-    var self = this
+    var self = this;
     this.canvas.addEventListener('click', function(){
-      self.draw.call(self);
+      self.nextVis.call(self);
     });
     this.draw.call(this);
   };
   var addEffect = module.exports.addEffect = function(fn){
-      this.vis.push(fn);
-    /*if(utils.isFunction(fn)){
-      this.vis.push(fn);
-    }else{
-      console.log('Visualizer.addEffect: argument not  a function');
-    }*/
+    this.vis.push(fn);
   };
   var initialize =  module.exports.initialize = function(opts){
     this.pub.dataSource = opts.dataSource;
@@ -24,10 +19,8 @@
     this.container.appendChild(this.canvas);
     this.canvas.width = opts.width||'256'; 
     this.canvas.height = opts.height||'128';
-    for(var i in visuals){
-      addEffect.call(this,visuals[i]);
-    }
     this.initialized = 1;
+    this.addEffect.call(this,visuals.drawPeaks); 
   };
   var draw = module.exports.draw = function(){
     var self = this;
@@ -38,12 +31,12 @@
 
   };
   var nextVis= module.exports.nextVis = function(){
-      this.current += 1;
-      if(this.current >= this.vis.length){
-        this.current = 0;
-      }
-      cancelAnimationFrame(this.timer);
-      this.draw.call(this);
+    this.current += 1;
+    if(this.current >= this.vis.length){
+      this.current = 0;
+    }
+    cancelAnimationFrame(this.timer);
+    this.draw.call(this);
   };
-  return module
+  return module;
 }).call({},window,module);
