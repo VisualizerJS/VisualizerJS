@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "minify": "~0.2.6",
-    "watchify": "~0.6.3"
+    "watchify": "~0.6.3",
+    "browserify": "~3.38.0"
   }
 }
