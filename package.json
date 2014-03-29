@@ -1,0 +1,25 @@
+{
+  "name": "VisualizerJS",
+  "version": "0.0.1",
+  "description": "Canvas Visualization (library/class/whathaveyou)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattijle/VisualizerJS.git"
+  },
+  "keywords": [
+    "canvas",
+    "html5"
+  ],
+  "author": "Matti Leppänen",
+  "license": "Apache v2",
+  "bugs": {
+    "url": "https://github.com/mattijle/VisualizerJS/issues"
+  },
+  "devDependencies": {
+    "minify": "~0.2.6",
+    "watchify": "~0.6.3"
+  }
+}
