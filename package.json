@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Canvas Visualization (library/class/whathaveyou)",
   "scripts": {
+    "build": "mkdir -p build&&node node_modules/.bin/browserify src/main.js > build/visualizer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

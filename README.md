@@ -11,7 +11,7 @@ Canvas visualization library, was originally part of my [Soundcloud radio](http:
 Clone this repo and install the dependencies. Then build with Browserify 
 ```
 npm install
-node node_modules/.bin/browserify src/main.js > visualizer.js
+npm run build
 ```
 
 
