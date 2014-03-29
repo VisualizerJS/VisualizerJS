@@ -19,7 +19,7 @@ node node_modules/.bin/browserify src/main.js > visualizer.js
 Usage:
 ```
 var viz = new Visualizer();
-viz.init({audioSource: as,container: 'cont'}); 
+viz.init({dataSource: as,container: 'cont'}); 
 ```
 
 ###Adding your own visualization functions
