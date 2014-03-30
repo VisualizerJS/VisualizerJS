@@ -4,6 +4,7 @@
   "description": "Canvas Visualization (library/class/whathaveyou)",
   "scripts": {
     "build": "mkdir -p build&&node node_modules/.bin/browserify src/main.js > build/visualizer.js",
+    "minify":"npm run build && node node_modules/.bin/minify build/visualizer.js build/visualizer.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +24,8 @@
     "minify": "~0.2.6",
     "watchify": "~0.6.3",
     "browserify": "~3.38.0"
+  },
+  "dependencies": {
+    "underscore": "^1.6.0"
   }
 }
