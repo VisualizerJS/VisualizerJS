@@ -19,21 +19,21 @@ npm run minify
 Usage:
 ```
 var viz = new Visualizer();
-viz.init({dataSource: as,container: 'cont'}); 
+viz.init({dataStream: yourdatastream,container: 'cont'}); 
 ```
 
 ###Adding your own visualization functions
 
 ```
-var drawPeaks = function(){
+var drawPeaks = function($ctx,$dataStream){
 // this exposes the 2d context and audiosource
 // to your function
   var step = 3;
-  this.ctx.fillStyle = '#FFFFFF';
-  this.ctx.fillRect(0,0,this.ctx.canvas.width,this.ctx.canvas.height);
-  this.ctx.fillStyle = '#000000';
-  for(var i = 0;i<this.audioSource.streamData.length;i++){
-    this.ctx.fillRect(i*step,Math.floor(64 - 64*(this.audioSource.streamData[i]/256)),step,2);
+  $ctx.fillStyle = '#FFFFFF';
+  $ctx.fillRect(0,0,$ctx.canvas.width,$ctx.canvas.height);
+  $ctx.fillStyle = '#000000';
+  for(var i = 0;i<$dataStream.length;i++){
+    $ctx.fillRect(i*step,Math.floor(64 - 64*($dataStream[i]/256)),step,2);
   }
 };
 viz.addEffect(drawPeaks);

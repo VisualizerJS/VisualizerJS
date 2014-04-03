@@ -12,7 +12,7 @@
     this.vis.push(fn);
   };
   var initialize =  module.exports.initialize = function(opts){
-    this.pub.dataSource = opts.dataSource;
+    this.pub.dataStream = opts.dataStream;
     this.container = window.document.getElementById((opts)?opts.container||'canvas-container':'canvas-container');
     this.canvas = window.document.createElement('canvas');
     this.pub.ctx = this.canvas.getContext('2d');
@@ -24,7 +24,7 @@
   };
   var draw = module.exports.draw = function(){
     var self = this;
-    this.vis[this.current].call(this.pub);
+    this.vis[this.current].call({},this.pub.ctx,this.pub.dataStream);
     this.timer = requestAnimationFrame(function(){
       self.draw.call(self);
     });

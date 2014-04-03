@@ -4,7 +4,7 @@
   var mVisualizer = function(opts){
     this.pub = {
       ctx:null,
-      dataSource: (opts)?opts.dataSource||null:null
+      dataStream: (opts)?opts.dataStream||null:null
     };
     this.vis = [];
     this.initialized = 0;
