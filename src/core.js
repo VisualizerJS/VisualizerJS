@@ -2,10 +2,8 @@
   var utils = require('./utils');
   var visuals = require('./visuals');
   var start = module.exports.start = function(){
-    var self = this;
-    this.canvas.addEventListener('click', function(){
-      self.nextVis.call(self);
-    });
+    var next = this.nextVis.bind(this);
+    this.canvas.addEventListener('click', next);
     this.draw.call(this);
   };
   var addEffect = module.exports.addEffect = function(fn){
@@ -24,10 +22,10 @@
   };
   var draw = module.exports.draw = function(){
     var self = this;
-    this.vis[this.current].call({},this.pub.ctx,this.pub.dataStream);
-    this.timer = requestAnimationFrame(function(){
-      self.draw.call(self);
-    });
+    var cur_vis = this.vis[this.current].bind({});
+    var boundDraw = this.draw.bind(this);
+    cur_vis(this.pub.ctx,this.pub.dataStream);
+    this.timer = requestAnimationFrame(boundDraw);
 
   };
   var nextVis= module.exports.nextVis = function(){
