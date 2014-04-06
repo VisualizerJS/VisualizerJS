@@ -1,3 +1,5 @@
+[![Build status](https://api.travis-ci.org/VisualizerJS/VisualizerJS.svg)](https://travis-ci.org/VisualizerJS/VisualizerJS)
+
 VisualizerJS
 ============
 
