@@ -20,4 +20,5 @@
   mVisualizer.prototype.addEffect = core.addEffect;
 
   window.Visualizer = window.Visualizer||mVisualizer;
+  return window;
 }).call({},window);
