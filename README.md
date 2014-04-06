@@ -14,9 +14,7 @@ npm install
 npm run minify
 ```
 
-
-
-Usage:
+**Usage:**
 ```
 var viz = new Visualizer();
 viz.init({dataStream: yourdatastream,container: 'cont'}); 
@@ -38,3 +36,6 @@ var drawPeaks = function($ctx,$dataStream){
 };
 viz.addEffect(drawPeaks);
 ```
+###TODO
+1. Write some tests maybe
+2. 
