@@ -1,11 +1,11 @@
 {
-  "name": "VisualizerJS",
+  "name": "visualizerjs",
   "version": "0.0.1",
   "description": "Canvas Visualization (library/class/whathaveyou)",
   "scripts": {
     "build": "mkdir -p build&&node node_modules/.bin/browserify src/main.js > build/visualizer.js",
     "minify": "npm run build && node node_modules/.bin/minify build/visualizer.js build/visualizer.min.js",
-    "test": " exit 0"
+    "test": "node node_modules/.bin/mocha tests/ "
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
   "devDependencies": {
     "minify": "~0.2.6",
     "watchify": "~0.6.3",
-    "browserify": "~3.38.0"
+    "browserify": "~3.38.0",
+    "mocha": "^1.18.2"
   },
   "dependencies": {},
   "homepage": "https://github.com/VisualizerJS/VisualizerJS",
