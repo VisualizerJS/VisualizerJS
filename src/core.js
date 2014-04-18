@@ -4,6 +4,7 @@
     var next = this.nextVis.bind(this);
     this.canvas.addEventListener('click', next);
     this.draw.call(this);
+    return this;
   };
   var addEffect = module.exports.addEffect = function(fn){
     if(utils.isFunction(fn)){
@@ -11,9 +12,10 @@
     }else{
       return false;
     }
+    return this;
   };
   var draw = module.exports.draw = function(){
-    var cur_vis = this.vis[this.current].bind({});
+    var cur_vis = this.vis[this.current].bind(this);
     var boundDraw = this.draw.bind(this);
     cur_vis(this.pub.ctx,this.pub.dataStream);
     this.timer = requestAnimationFrame(boundDraw);

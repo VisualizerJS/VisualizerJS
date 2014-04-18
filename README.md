@@ -10,7 +10,7 @@ Canvas visualization library, was originally part of my [Soundcloud radio](http:
 
 ###Installing
 
-Clone this repo and install the dependencies. Then build with Browserify 
+Clone this repo and install the dependencies. Then build with Browserify
 ```
 npm install
 npm run minify
@@ -19,8 +19,24 @@ npm run minify
 **Usage:**
 ```
 var viz = new Visualizer();
-viz.init({dataStream: yourdatastream,container: 'cont'}); 
+viz.init({dataStream: yourdatastream,container: 'cont'})
+  .barGraph({bgColor:'#000000',color:'#235478'})
+  .start();
 ```
+**API:**
+
+|func       | options                                       |
+|-----------|-----------------------------------------------|
+|init       | container: id for your canvas container       |
+|           | datastream: array of the data to be visualized|
+|-----------|-----------------------------------------------|
+|barGraph   | bgColor: background color                     |
+|           | color: foreground color                       |
+|           | width: bar width                              |
+|-----------|-----------------------------------------------|
+|start      |                                               |
+|-----------|-----------------------------------------------|
+
 
 ###Adding your own visualization functions
 
@@ -40,4 +56,4 @@ viz.addEffect(drawPeaks);
 ```
 ###TODO
 1. Write some tests maybe
-2. 
+2. Get more graphs and visualizations built in.

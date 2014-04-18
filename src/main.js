@@ -20,14 +20,16 @@
     this.canvas = window.document.createElement('canvas');
     this.pub.ctx = this.canvas.getContext('2d');
     this.container.appendChild(this.canvas);
-    this.canvas.width = opts.width||'256'; 
+    this.canvas.width = opts.width||'256';
     this.canvas.height = opts.height||'128';
     this.initialized = 1;
-    this.addEffect.call(this,visuals.drawPeaks); 
+    return this;
   };
+  mVisualizer.prototype.peaksGraph = visuals.drawPeaks;
+  mVisualizer.prototype.barGraph =  visuals.barGraph;
   mVisualizer.prototype.draw = core.draw;
   mVisualizer.prototype.nextVis = core.nextVis;
-  mVisualizer.prototype.init = initialize; 
+  mVisualizer.prototype.init = initialize;
   mVisualizer.prototype.start = core.start;
   mVisualizer.prototype.addEffect = core.addEffect;
 
