@@ -1,9 +1,13 @@
 (function(module){
   var utils = require('./utils');
   var start = module.exports.start = function(){
-    var next = this.nextVis.bind(this);
-    this.canvas.addEventListener('click', next);
-    this.draw.call(this);
+    if(this.initialized){
+      var next = this.nextVis.bind(this);
+      this.canvas.addEventListener('click', next);
+      this.draw.call(this);
+    }else{
+      console.log('Visualizer not properly initialized.');
+    }
     return this;
   };
   var addEffect = module.exports.addEffect = function(fn){

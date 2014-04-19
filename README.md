@@ -42,7 +42,7 @@ viz.init({dataStream: yourdatastream,container: 'cont'})
 
 ```
 var drawPeaks = function($ctx,$dataStream){
-// this exposes the 2d context and audiosource
+// this exposes the 2d context and datastream
 // to your function
   var step = 3;
   $ctx.fillStyle = '#FFFFFF';
