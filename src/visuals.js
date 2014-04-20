@@ -10,9 +10,9 @@
       $ctx.strokeStyle = opts.color||'#000000';
       $ctx.fillStyle = opts.color||'#000000';
       $ctx.beginPath();
-      $ctx.moveTo(0,height);
+      $ctx.moveTo(-1000,height);
       for(var i = 0;i<$dataStream.length;i++){
-        $ctx.lineTo(i*step,Math.floor(height - height*($dataStream[i]/256)));
+        $ctx.lineTo(i*step,Math.floor(height - height*($dataStream[i]/512)));
       }
       $ctx.closePath();
       if(opts.fill){
@@ -24,7 +24,7 @@
     return this;
   };
   var barGraph = module.exports.barGraph = function(opts){
-    opts = opts ||{};
+    opts = opts||{};
     opts.bgColor = opts.bgColor || '#FFFFFF';
     opts.color = opts.color||'#aa7744';
     this.addEffect(function($ctx,$dataStream){
@@ -35,8 +35,8 @@
       $ctx.fillRect(0,0,$ctx.canvas.width,$ctx.canvas.height);
       for(var i = 0;i<$dataStream.length;i++){
         $ctx.fillStyle = opts.color;
-        $ctx.fillRect(i*step,Math.floor(height - height*($dataStream[i]/256)),
-          step,height*($dataStream[i]/256));
+        $ctx.fillRect(i*step,Math.floor(height - height*($dataStream[i]/512)),
+          step,height*($dataStream[i]/512));
       }
     });
     return this;
