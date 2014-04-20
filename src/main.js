@@ -1,4 +1,4 @@
-(function(window){
+(function(window,module){
   var core = require('./core');
   var visuals = require('./visuals');
   var utils = require('./utils');
@@ -38,5 +38,6 @@
   mVisualizer.prototype.addEffect = core.addEffect;
 
   window.Visualizer = window.Visualizer||mVisualizer;
-  return window;
-}).call({},window);
+  module.exports = mVisualizer;
+  return module;
+}).call({},window,module);

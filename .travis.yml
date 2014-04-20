@@ -1,11 +1,3 @@
 language: node_js
 node_js:
 - '0.10'
-deploy:
-  provider: npm
-  email: matti@mattijle.com
-  api_key:
-    secure: HYofmU0wXXijj8hgp6Fsz4F2TUUFoArMp7/jixFy4tGGwo+G9Vibv218atS6MEdqGYF6HIfU64ZGDtmEHH7gkyKJcpZ1svfiuZiMNG7JSWZDmICHiUNUbpBcEWZscB7wtJvhC2US4Hnju2dxaK/VRcy8He7iXg/+Vd0yi2yPmRM=
-  on:
-    tags: true
-    repo: visualizerjs/visualizerjs
