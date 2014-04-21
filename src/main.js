@@ -3,7 +3,8 @@
   var visuals = require('./visuals');
   var utils = require('./utils');
   var mVisualizer = function(opts){
-    opts = opts||{}
+    opts = opts||{};
+    this.showFps = opts.showFps||false;
     this.pub = {
       ctx:null,
       dataStream: opts.dataStream||null
@@ -17,6 +18,7 @@
   };
   var initialize = function(opts){
     opts = opts||{};
+    this.showFps = opts.showFps||false;
     this.pub.dataStream = opts.dataStream||this.pub.dataStream;
     this.container = window.document.getElementById(opts.container)||this.container;
     this.canvas = window.document.createElement('canvas');
