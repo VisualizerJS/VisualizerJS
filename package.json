@@ -3,9 +3,9 @@
   "version": "0.0.5",
   "description": "Canvas Visualization (library/class/whathaveyou)",
   "scripts": {
-    "build": "mkdir -p build&&node node_modules/.bin/browserify src/main.js > build/visualizer.js",
-    "minify": "npm run build && node node_modules/.bin/minify build/visualizer.js build/visualizer.min.js",
-    "test": "node node_modules/.bin/mocha tests/ "
+    "build": "browserify src/main.js > build/visualizer.js",
+    "minify": "npm run build && minify build/visualizer.js build/visualizer.min.js",
+    "test": "mocha tests/ "
   },
   "repository": {
     "type": "git",
