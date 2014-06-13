@@ -26,16 +26,12 @@ viz.init({dataStream: yourdatastream,container: 'cont'})
 **API:**
 
 |func       | options                                       |
-|-----------|-----------------------------------------------|
 |init       | container: id for your canvas container       |
 |           | datastream: array of the data to be visualized|
-|-----------|-----------------------------------------------|
 |barGraph   | bgColor: background color                     |
 |           | color: foreground color                       |
 |           | width: bar width                              |
-|-----------|-----------------------------------------------|
 |start      |                                               |
-|-----------|-----------------------------------------------|
 
 
 ###Adding your own visualization functions
