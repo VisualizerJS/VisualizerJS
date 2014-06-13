@@ -1,16 +1,14 @@
 (function(module){
   var utils = require('./utils');
-  var start = module.exports.start = function(){
+  module.exports.start = function(){
     if(this.initialized){
-      var next = this.nextVis.bind(this);
-      this.canvas.addEventListener('click', next);
       this.draw.call(this);
     }else{
       console.log('Visualizer not properly initialized.');
     }
     return this;
   };
-  var addEffect = module.exports.addEffect = function(fn){
+  module.exports.addEffect = function(fn){
     if(utils.isFunction(fn)){
       this.vis.push(fn);
     }else{
@@ -18,7 +16,7 @@
     }
     return this;
   };
-  var draw = module.exports.draw = function(time){
+  module.exports.draw = function(time){
     if(!this._lastTime){
       this._lastTime = time;
       this.fps = 0;
@@ -36,7 +34,7 @@
     this.timer = requestAnimationFrame(boundDraw);
 
   };
-  var nextVis= module.exports.nextVis = function(){
+  module.exports.nextVis = function(){
     this.current += 1;
     if(this.current >= this.vis.length){
       this.current = 0;
