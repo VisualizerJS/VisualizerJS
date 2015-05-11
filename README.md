@@ -3,7 +3,7 @@
 VisualizerJS
 ============
 
-Canvas visualization library, was originally part of my [Soundcloud radio](http://zxc.fi/) but decided to roll it out as a separate library.
+Canvas visualization library, was originally part of my Soundcloud radio but decided to roll it out as a separate library.
 
 ###Requirements
 1. Node 0.10.18
