@@ -1,6 +1,6 @@
 {
   "name": "visualizerjs",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Canvas Visualization (library/class/whathaveyou)",
   "scripts": {
     "build": "browserify src/main.js > build/visualizer.js",
